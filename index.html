@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExerciseLaboratory_004</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header-fix">
+        <div class="header-container">
+            <h1>Positioning of elements in CSS</h1>
+        </div>
+    </header>
+    <div class="container">
+        <section class="firstsection" id="first-section">
+            <p class="marginTop50">Positioning the elements of an HTML page is no feat. CSS provides a set of method that can be used cumulatively:</p>
+            <ul>
+              
+                <li><b>Margin and spacing</b>: via the <b>margin</b> and <b>padding</b> properties</li>
+                <li><b>Centering</b>: vertical or horizontal via the <b>text-align</b> a <b>vertical-align</b> 
+                    <br> properties</li>
+                <li><b>Display Type</b>: <b>display</b> property</li>
+                <li><b>Positioning</b>: <b>position</b></li>
+                <li><b>Floating Object</b>: <b>float</b> property</li>
+            </ul>
+
+            <article>
+                <h2>1. Margin and Spacing</h2>
+                <p class="marginBot20">Margin and Spacing are used as a priority to position a block with respect to its parent block. <br>
+                    The <b>margin</b> property is used to apply outer
+                    spacing to the block and the <b>padding</b> property applies inner spacing to the block.</p>
+                <div style="border:2px solid blue;">
+                    <p style="padding:5px; margin:15px 10px; border:1px dashed gray;">
+                        A paragraph of text with an inner spacing of 5 pixels all around the text (gray dotted border)
+                        wrapped in a parent block (blue border) and vertical outer spacing of 15 pixels and horizontal
+                        outer spacing of 10 pixels.</p>
+                </div>
+                <div>
+                    <pre class="pre">
+                    <p class="code">&lt;div style="border:2px solid blue;"&gt;<br>
+                        &lt;p style="padding:5px; margin:15px 10px; border:1px dashed gray;"&gt;<br>
+                        A paragraph of text with an inner spacing of 5 pixels all around the text (gray dotted border) wrapped in a <br> parent block (blue border) and vertical outer spacing of 15 pixels and horizontal outer spacing of 10 pixels. <br> &lt;/p&gt;<br>
+                    &lt;/div&gt;</p>    
+                </pre>
+                </div>
+            </article>
+            <article>
+
+                <h2>2. Horizontal and Vertical centering</h2>
+                <h3>2.1 Horizontal Centering</h3>
+                <p class="marginBot20">To center a text horizontally, the <b>text- align</b> property will be used. To center a
+                    block horizontally, one method is to use the automatic margins
+                    technique (<b>margin: auto</b>
+                    -cf. above). Another is to make use of flexible boxes with the
+                   <b> justify-content</b> property.</p>
+                <div style="border:2px solid blue;">
+                    <p style="text-align: center; width: 50%; margin: auto; border: 1px dashed gray;">
+                        A paragraph of text with a width of 50% that of the parent block,
+                        centered horizontally, and whose text is also centered horizontally.
+                    </p>
+                </div>
+                <div>
+                <pre class="pre">
+    <p class="code">&lt;div style="border:2px solid blue;"&gt;<br>
+        &lt;p style="text-align: center; width: 50%; margin: auto; border: 1px dashed gray;"&gt;<br>
+        A paragraph of text with a width of 50% that of the parent block,
+                            centered horizontally, and whose text is also centered horizontally. styler text-alighate the gray <br> &lt;/p&gt;<br>
+    &lt;/div&gt;
+</p>    
+</pre>
+</div>
+
+                <h3>2.2 Vertical Centering</h2>
+                    <p class="marginBot20">Vertical centering will depend on the container element.
+                        <br>If the container
+                        block has the <b>display: table-cell</b> property, such as a table for example, you can use <b>vertical-align: middle</b>
+                         Otherwise you can use the flexible boxes and the <b>align-items</b> property</p>
+                    <div
+                        style="border:2px solid blue; height: 250px; width: 500px; display: flex; align-items: center; justify-content: center;">
+                        <p style="text-align: center; width: 50%; border: 1px dashed gray;">
+                            Text paragraph 50% wide, centered
+                            vertically and horizontally in its
+                            parent block
+                        </p>
+                    </div>
+                    <div>
+                    <pre class="pre">
+                        <p class="code">&lt;div style="border:2px solid blue; height: 250px; width: 500px; display: flex; align-items: center; justify-content: center;"&gt;<br>
+                            &lt;p style="text-align: center; width: 50%; border: 1px dashed gray;"&gt;<br>
+                            Text paragraph 50% wide, centered
+                            vertically and horizontally in its
+                            parent block<br> &lt;/p&gt;<br>
+                        &lt;/div&gt;
+                    </p>    
+                    </pre>
+                </div>
+
+            </article>
+            <article>
+                <h2>3. Display Type</h2>
+                <p class="marginBot20">Changing the rendering mode of HTML elements via the <b>display</b> property enables easy positioning of the elements relative to one another
+                Display Block/Inline-Inline-block- Table cell-Flex (spacebetween)</p>
+
+                <h3>3.1 Display Block / Inline</h3>
+                <p class="marginBot20">By default, the main HTML elements use the block (div, p...) or inline (a, span...) renderings. It is possible to modify the rendering mode of an element to change its display mode.
+                <br>Example: use a bullet list containing links to generate a horizontal menu</p>
+
+
+
+               <div>
+                    <nav>
+                        <ul class="menu">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Section 1</a></li>
+                            <li><a href="#">Section 2</a></li>
+                            <li><a href="#">Section 3</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <br>
+                <div>
+                    <pre class="pre">
+                        <p class="code">
+                            &lt;nav&gt;
+                            &lt;ul class="menu"&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;Section 1&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;Section 2&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;Section 3&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/nav&gt;
+                    </p>    
+                    </pre>
+                </div>
+
+                <h3>3.2 Display Inline-Block/Table-cell...</h3>
+                <p>Other types of rendering modes allow, for example, inline and block display to be mixed: <strong>inline-block</strong> which allows a width, a height, margins and spacing to be added to an inline block.
+                <br>Table-cell mode allows table properties to be applied to a block, generally used to center vertically.</p>
+                <div>
+                    <label for="email" style="display: inline-block; width: 280px; color: green;">The inline-block label in my field</label>
+                    <input type="email" name="email" id="email" placeholder="Your email">
+                </div>
+                <div>
+                    <pre class="pre">
+                        <p class="code">
+                            &lt;div&gt;
+                            &lt;label for="email" style="display: inline-block; width: 280px; color: green;"&gt;The inline-block label in my field&lt;/label&gt;
+                                &lt;input type="email" name="email" id="email" placeholder="Your email"&gt;
+                        &lt;/div&gt;
+                    </p>    
+                    </pre>
+                </div>
+
+                <h3>3.3 Display Flex</h3>
+                <p>It would take several laboratory exercises to cover all the possibilities presented by flexible boxes. This modern and very powerful rendering mode makes it possible to easily position elements relative to each other.</p>
+                <div style="display: flex; justify-content: space-between; border: 2px solid blue; height: 80px;">
+                    <div style="width:30%; margin: 1.5%; border: 1px solid green;"></div>
+                    <div style="width:30%; margin: 1.5%; border: 1px solid pink;"></div>
+                    <div style="width:30%; margin: 1.5%; border: 1px solid gray;"></div>
+                </div>
+                <div>
+                    <pre class="pre">
+                        <p class="code">
+                        &lt;div style="display: flex; justify-content: space-between; border: 2px solid blue; height: 80px;"&gt;
+                            &lt;div style="width:30%; margin: 1.5%; border: 1px solid green;"&gt;
+                            &lt;/div&gt;
+                            &lt;div style="width:30%; margin: 1.5%; border: 1px solid pink;"&gt;
+                            &lt;/div&gt;
+                            &lt;div style="width:30%; margin: 1.5%; border: 1px solid gray;"&gt;
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+                    </p>    
+                    </pre>
+                </div>
+            </article>
+
+            <article>
+                <h2>4. Positioning Type</h2>
+                <p class="marginBot20">By default, all elements in the HTML flow are positioned statically =><strong>position:static</strong>
+                    <br>
+                    It is possible to position elements by changing the value of the <strong>position</strong> property</p>
+
+                <h3>4.1 Fixed Position</h3>
+                <p class="marginBot20">Fixed positioning allows an element to be taken out of the HTML flow and placed in a specific location by adjusting the top, bottom, right and left properties. This is the case, for example, of the header of this page, which is fixed and which has the following CSS style:</p>
+
+                <div>
+                    <pre class="pre">
+                        <p class="code">header.header-fix{
+                            height: 85px;
+                            width: 100%;
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            background-color: #eee;
+                            border-bottom: 1px solid #ddd;
+                            box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+                        }
+                        </p>
+                    </pre>
+                </div>
+
+                <h3>4.2 Relative Position</h3>
+                <p class="marginBot20">Relative positioning keeps the element in the flow but allows it to be offset from its initial position via the left, right, top, and bottom properties.</p>
+
+                <div style="display:flex; justify-content: space-between; border: 2px solid blue; height: 80px;">
+                    <div style="width: 30%; margin: 1.5%; border: 1px solid green;"></div>
+                    <div style="width:30%; margin: 1.5%; border: 1px solid pink; position: relative; top: 10px; left: 10px;">This block is offset by 10 pixels down and to the right</div>
+                    <div style="width:30%; margin: 1.5%; border: 1px solid gray;"></div>
+                </div>
+                <div>
+                    <pre class="pre">
+                        <p class="code">
+                        &lt;div style="display: flex; justify-content: space-between; border: 2px solid blue; height: 80px;"&gt;
+                            &lt;div style="width:30%; margin: 1.5%; border: 1px solid green;"&gt;
+                            &lt;/div&gt;
+                            &lt;div style="width:30%; margin: 1.5%; border: 1px solid pink; position: relative; top: 10px; left: 10px;"&gt;
+                            This block is offset by 10 pixels down and to the right
+                            &lt;/div&gt;
+                            &lt;div style="width:30%; margin: 1.5%; border: 1px solid gray;"&gt;
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+                    </p>    
+                    </pre>
+                </div>
+
+                <h3>4.3 Absolute Position</h3>
+                <p class="marginBot20">Absolute positioning takes the HTML element out of the flow and positions it relative to the wrapping block (having the relative positioning
+                    property) according to the values provided by top, left, right and/or bottom.</p>
+
+                    <div style="display:flex; justify-content: space-between; border: 2px solid blue; height: 80px; position: relative;">
+                        <div style="width: 30%; margin: 1.5%; border: 1px solid green;"></div>
+                        <div style="width:30%; margin: 1.5%; border: 1px solid pink; position: relative; top: 10px;right: 330px;">this block is offset by 10 pixels down and to the right with respect to the parent block</div>
+                        <div style="width:30%; margin: 1.5%; border: 1px solid gray;"></div>
+                </div>
+                <div>
+                    <pre class="pre">
+                        <p class="code">
+                        &lt;div style="display: flex; justify-content: space-between; border: 2px solid blue; height: 80px; postition: relative;"&gt;
+                            &lt;div style="width:30%; margin: 1.5%; border: 1px solid green;"&gt;
+                            &lt;/div&gt;
+                            &lt;div style="width:30%; margin: 1.5%; border: 1px solid pink; position: relative; top: 10px; right: 330px;"&gt;
+                            This block is offset by 10 pixels down and to the right
+                            &lt;/div&gt;
+                            &lt;div style="width:30%; margin: 1.5%; border: 1px solid gray;"&gt;
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+                    </p>    
+                    </pre>
+                </div>
+            </article>
+
+            <article>
+                <h2>5. FloatingObjects</h2>
+                <p class="marginBot20">This property, which was very popular in the past, can be useful particularly for aligning an image and text.</p>
+
+                <div style="border: 2px solid blue; padding: 5px;">
+                    <img src="/html5.png" style="float: left; width: 150px; padding: 25px 5px 5px 5px;">
+                    <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos libero recusandae beatae quas atque optio nesciunt eos! Itaque doloribus facilis, adipisci, error odit quia 
+                        reiciendis similique sapiente qui nisi rerum! Voluptate sint deserunt magni eius repellat sed in recusandae earum amet beatae. Unde, hic natus eum vel temporibus quaerat, ut minus in magnam veniam id
+                         voluptates beatae repudiandae a dolores. Impedit voluptate ratione blanditiis modi veritatis aliquid iusto nemo nesciunt laborum. Ut sunt rerum similique vel sapiente fugiat voluptates ipsum officiis
+                          tempore quis! Ut a eos consequuntur corporis aperiam! Facere? Veritatis similique mollitia laborum, commodi animi enim aliquid culpa quia exercitationem ullam iure error eaque recusandae, velit 
+                          consectetur nihil blanditiis voluptas odit tempora. Nisi, voluptas debitis exercitationem minus quidem unde! Est earum magni, quas, dolore voluptas officiis animi consectetur saepe quidem ratione
+                           dolorum dolores sunt fugiat id alias ea pariatur sapiente, non voluptatem exercitationem eius hic nisi corrupti? Modi, fugiat. Possimus deserunt, officia quibusdam laboriosam ea repellat corrupti
+                            eius tenetur, rem maiores impedit distinctio corporis illo reprehenderit explicabo quo, non consectetur vero. Temporibus repudiandae voluptatum quia? Ipsum perspiciatis aperiam doloribus. 
+                            Non esse quam recusandae cumque perferendis vero dolorum, culpa expedita nemo! Totam, qui, voluptate repellat, itaque quae ducimus dicta tempora dolores nemo deserunt cum perferendis 
+                            alias eligendi quaerat est enim? Modi, culpa obcaecati. Doloribus enim ipsa, dicta obcaecati quisquam itaque quod deserunt eligendi tempora deleniti nostrum tenetur reprehenderit? 
+                            Voluptas fuga nulla vel laborum suscipit consequuntur impedit a non, aperiam ipsum! Aliquid debitis accusamus nisi excepturi eaque temporibus ut magnam, accusantium saepe, impedit doloribus
+                             laudantium, nobis fugit quia! Cupiditate placeat ullam a iusto esse consequuntur similique dicta provident maxime veniam? Provident. Vitae reprehenderit minima numquam soluta? Culpa sapiente 
+                             molestiae dolorem quisquam, corrupti quidem soluta minus asperiores omnis modi natus et illum alias reprehenderit, fugiat aliquid perferendis, deleniti aut odio. Maiores, quos.</p>
+                </div>
+
+                <div>
+                    <pre class="pre">
+                        <p class="code">
+                            &lt;div style="border: 2px solid blue; padding: 5px;"&gt;
+                                &lt;img src="/html5.png" style="float: left; width: 150px; padding: 25px 5px 5px 5px;"&gt;
+                                &lt;p style="text-align: justify;"&gt;
+                                Lorem ipsum is simply dummy text of the...
+                                &lt;/p&gt;
+                            &lt;/div&gt;
+                        </p>
+                    </pre>
+                </div>
+            </article>
+        </section>
+        <footer style="text-align: center; ">
+            <p class="marginTop50">If you have any questions: <a href="#" style ="color: blueviolet">contact me </a> - Credits: HTML5 logo <a href="images/html5.png">wikipedia</a></p>
+        </footer>
+    </div>
+
+</body>
+
+</html>
+ 
